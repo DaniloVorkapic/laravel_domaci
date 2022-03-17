@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class  CreateSkijesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class  CreateSkijesTable extends Migration
      */
     public function up()
     {
-        Schema::create('skijes', function (Blueprint $table) {
+        Schema::create('kategorijas', function (Blueprint $table) {
             $table->id();
-            $table->string('naziv');
-            $table->integer('godina_proizvodnje');
-            $table->integer('visina');
-            $table->foreignId('proizvodjac_id');
-            $table->foreignId('user_id');
-            $table->foreignId('kategorija_id');
+            $table->string('naziv')->unque();
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class  CreateSkijesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skijes');
+        Schema::dropIfExists('kategorijas');
     }
 };
