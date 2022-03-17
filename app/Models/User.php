@@ -32,6 +32,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function knjige(){
+        return $this->hasMany(Skije::class);
+    }
 
     /**
      * The attributes that should be cast.
@@ -41,4 +44,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
 }

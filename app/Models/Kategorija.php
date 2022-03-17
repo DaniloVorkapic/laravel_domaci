@@ -14,4 +14,8 @@ class Kategorija extends Model
         
         
     ];
+
+    public function knjige(){
+        return $this->hasMany(Skije::class);
+    }
 }

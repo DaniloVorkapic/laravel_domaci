@@ -13,4 +13,8 @@ class Porizvodjac extends Model
         'drzava'
         
     ];
+
+    public function skije(){
+        return $this->hasMany(Skije::class);
+    }
 }

@@ -17,7 +17,9 @@ class PorizvodjacFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'naziv'=>$this->faker->word(),
+           'drzava'=>$this->faker->word(),
+           
         ];
     }
 }
